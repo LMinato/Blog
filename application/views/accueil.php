@@ -15,7 +15,7 @@
                         <div><a href="<?= site_url('/article_c/formModifierArticle/'.$r->id); ?>">Modifier</a></div>
                         <div><a href="<?= site_url('/article_c/supprimerArticle/'.$r->id);?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer cet article ?'));">Supprimer</a></div>
                     <?php } ?>
-                    <div class="ModifOnLeft">Dernière modification : <?= $r->date_modification ?></div></div>
+                    <div class="ModifOnLeft">Dernière modification : <?= $r->date_modification ?></div>
                 </fieldset>
                 <?php endforeach; ?>
             <?php endif; ?>
