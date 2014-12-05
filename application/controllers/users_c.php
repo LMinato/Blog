@@ -96,7 +96,7 @@ class users_c extends CI_Controller {
     public function deconnexion()
     {
         $this->session->sess_destroy();
-        redirect('users_c');exit;
+        redirect('article_c');exit;
     }
     public function mdp_oublie()
     {

@@ -4,10 +4,11 @@
             <ul class="button-group">
                 <li><a href="<?= site_url('/article_c/formCreerArticle/');?>" class="button">Créer</a></li>
                 <li><a href="<?= site_url('/article_c/afficherArticle/');?>" class="button">Opérations</a></li>
-                <?php if ($this->session->userdata('droit') ==1 || $this->session->userdata('droit') ==2 ) echo "blublu";
-                        else {?>
+                <?php if ($this->session->userdata('droit') ==1 || $this->session->userdata('droit') ==2 ) { ?>
+                <li><a href="<?= site_url('/users_c/deconnexion/');?>" class="button">Se déconnecter</a></li>
+                <?php } else {?>
 
-                <li><a href="#" class="button">Se connecter</a></li>
+                <li><a href="<?= site_url('/users_c/aff_connexion/');?>" class="button">Se connecter</a></li>
                 <li><a href="#" class="button">S'inscrire</a></li>
                 <?php } ?>
             </ul>
