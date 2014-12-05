@@ -12,12 +12,12 @@
         <h1>Inscription</h1>
         <?php echo form_open('users_c/inscription'); ?>
 
-        <label for="login">login:</label>
+        <label for="login">Login:</label>
         <input type="text" name="login" value="<?php echo set_value('login');?>" />
         <?php echo form_error('login','<span class="error">',"</span>");?>
         <br>
 
-        <label for="email">email:</label>
+        <label for="email">E-mail:</label>
         <input type="text" name="email" value="<?php echo set_value('email');?>" />
         <?php echo form_error('email','<span class="error">',"</span>");?>
         <br>
@@ -26,7 +26,7 @@
         <input type="password" name="pass" value="<?= set_value('pass');?>" />
         <?php echo form_error('pass','<span class="error">',"</span>");?>
         <br>
-        <label for="pass2">confirmation Mot de passe:</label>
+        <label for="pass2">Confirmation du mot de passe:</label>
         <input type="password" name="pass2" value="<?= set_value('pass2');?>" />
         <?php echo form_error('pass2','<span class="error">',"</span>");?>
         <br>

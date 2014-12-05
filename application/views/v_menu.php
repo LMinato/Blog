@@ -6,10 +6,12 @@
                 <li><a href="<?= site_url('/article_c/afficherArticle/');?>" class="button">Opérations</a></li>
                 <?php if ($this->session->userdata('droit') ==1 || $this->session->userdata('droit') ==2 ) { ?>
                 <li><a href="<?= site_url('/users_c/deconnexion/');?>" class="button">Se déconnecter</a></li>
+                <li><div class="button">Bonjour, <?php echo($this->session->userdata('login'));?></div></li>
                 <?php } else {?>
 
                 <li><a href="<?= site_url('/users_c/aff_connexion/');?>" class="button">Se connecter</a></li>
-                <li><a href="#" class="button">S'inscrire</a></li>
+                <li><a href="<?= site_url('/users_c/inscription'); ?>" class="button">S'inscrire</a></li>
+
                 <?php } ?>
             </ul>
         </div>
