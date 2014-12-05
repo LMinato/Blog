@@ -1,0 +1,43 @@
+article {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.row {
+    padding-left : 0px;
+    max-width: 70.5rem;
+}
+
+tr {
+    height: 50px;
+}
+
+fieldset.article {
+    padding-left: 70px;
+    padding-right: 70px;
+
+}
+h3.titre-article {
+    margin-left: -50px;
+    left:0px;
+}
+
+.ModifOnLeft {
+    margin-left : 60%;
+    margin-top: 25px;
+    font-size: 12px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p.dyk {
+    text-align: justify;
+    font-size:14px;
+}
+
+.panel {
+    background-color: #d9d9d9;
+    border-color: #000000;
+}

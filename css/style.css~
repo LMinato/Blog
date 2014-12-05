@@ -1,0 +1,154 @@
+body{
+font-family: Arial;
+background-image: url('../Blog.jpg');
+}
+
+/****************************************** zone menu*/
+div#zone-menu
+{
+position:absolute;
+top:2%;
+left:2%;
+visibility:visible;
+width:96%;
+height:40px;
+border-bottom: 2px solid Black;z-index:5;
+font-size: 14px;
+margin-right:5px;
+
+}
+div#zone-menu .titreMenu {
+height: 40px;
+
+}
+div#zone-menu .boutonMenu {
+display:block;
+float: left;
+width: 200px;
+height: 40px;
+background-color: #EEEEEE;
+border: 1px solid Black;
+margin-left: 40px;
+text-align: center;
+vertical-align:middle;
+z-index:7;
+overflow: hidden;  /*important*/
+}
+
+div#zone-menu .boutonMenu:hover {
+height: auto;
+cursor: pointer;
+background-color: #CCCCDE;
+}
+
+div#zone-menu .SousMenu {
+display: block;
+height: 40px;
+border: 1px solid Black;
+background-color: #EEEEEE;   
+z-index:8;
+color:black;
+vertical-align:middle;
+text-decoration:none;
+}
+div#zone-menu .SousMenu:hover {
+background:#CCCCEE;
+}
+
+/****************************************** zone de travail*/
+div#zone-travail
+{
+position:absolute; top:25%; left:25%; visibility:visible; width:85%; z-index:4;
+
+}
+/****************************************** boite login*/
+div#login_boite
+{
+position:absolute; top:0%; right:0px; visibility:visible; z-index:13;
+background-color: #c0c0c0;
+text-align: center;
+font-weight: bold;
+margin-left: auto;
+margin-right: auto;
+}
+
+
+/******************************************  tableau */
+table.tableau-article, table.tableau-stock{
+    width: 60%;
+	border:solid 5px black;
+	border-collapse:collapse;
+	text-align:center;
+    margin-right: 50cm;
+}
+
+table.tableau-article caption,table.tableau-stock caption{
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:5px;
+	color: black;
+    font-size: 20px;
+    font-style: italic;
+	}
+table.tableau-article thead,table.tableau-stock thead{
+	color: black;
+	background-color: #CCCCEE;
+}
+table.tableau-article img,table.tableau-stock img{
+    width:20px;
+    height:20px;
+    border:none;
+    margin-left:10px;
+    margin-right:auto;}
+
+table.tableau-article th,table.tableau-stock th{
+    border:solid black 1px;
+}
+
+table.tableau-article td,table.tableau-stock td{
+    border:solid black 1px;
+}
+
+/******************************************  formulaire */
+div#article_formulaire{
+width:500px;
+}
+
+div#article_formulaire label{
+text-align:right;
+display:block;
+float:left;
+width:150px;
+}
+
+div#article_formulaire input
+{
+display:block-inline;
+width:180px;
+} 
+div#article_formulaire span.erreur
+{
+display:block-inline;
+} 
+p#article_information
+{
+color:red;
+font-size:75%;
+}
+
+div.creation_link{
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+div.creation_link:hover{
+    text-decoration: underline;
+}
+
+table, fieldset, legend{
+background-color: white;
+}
+
+
