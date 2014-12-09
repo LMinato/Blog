@@ -1,19 +1,30 @@
 DROP TABLE IF EXISTS COMMENTAIRES;
 DROP TABLE IF EXISTS ARTICLES;
-DROP TABLE IF EXISTS membres;
+DROP TABLE IF EXISTS MEMBRES;
 DROP TABLE IF EXISTS THEMES;
+DROP TABLE IF EXISTS DROIT;
 
 CREATE TABLE THEMES (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     libelle  VARCHAR(50)
 );
 
+CREATE TABLE DROIT (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    libelle VARCHAR(50)
+);
+
+INSERT INTO DROIT (libelle) VALUES ('administrateur');
+INSERT INTO DROIT (libelle) VALUES ('membre');
+INSERT INTO DROIT (libelle) VALUES ('invite');
+
+
 INSERT INTO THEMES (libelle) VALUES ('Informatique');
 INSERT INTO THEMES (libelle) VALUES ('Economie');
 INSERT INTO THEMES (libelle) VALUES ('Sport');
 INSERT INTO THEMES (libelle) VALUES ('Cinema');
 
-CREATE TABLE IF NOT EXISTS `membres` (
+CREATE TABLE IF NOT EXISTS MEMBRES (
   `id` int(2) NOT NULL AUTO_INCREMENT,
   `login` varchar(100) NOT NULL,
   `email` varchar(100),
@@ -23,11 +34,11 @@ CREATE TABLE IF NOT EXISTS `membres` (
   PRIMARY KEY (`id`)
 );
 
-INSERT INTO `membres` (`id`, `login`, `email`, `pass`, `droit`, `valide`) VALUES
-(1, 'Auteur inconnu', '', '', 1, 1),
-(2, 'toto', 'toto@gmail.com', 'toto', 1, 1),
-(3, 'toto2', 'toto2@gmail.com', 'toto', 1, 0),
-(4, 'admin', 'admin@site.fr', 'admin', 2, 1);
+INSERT INTO MEMBRES (`id`, `login`, `email`, `pass`, `droit`, `valide`) VALUES
+(1, 'Auteur inconnu', '', '', 3, 1),
+(2, 'toto', 'toto@gmail.com', 'toto', 2, 1),
+(3, 'toto2', 'toto2@gmail.com', 'toto', 2, 0),
+(4, 'admin', 'admin@site.fr', 'admin', 1, 1);
 
 
 CREATE TABLE ARTICLES (
@@ -137,6 +148,6 @@ ORDER BY date_creation DESC LIMIT 0, 5;
 AS nb_billets 
 FROM billets;*/
 
-SELECT * FROM membres;
+SELECT * FROM MEMBRES;
 SELECT * FROM COMMENTAIRES;
 SELECT * FROM THEMES;

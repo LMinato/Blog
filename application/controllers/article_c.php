@@ -28,10 +28,13 @@ class article_c extends CI_Controller {
 
     public function membres()
     {
+        $this->load->view('v_head');
+        $this->load->view('v_menu');
         $this->grocery_crud->set_table('MEMBRES');
         $output = $this->grocery_crud->render();
 
         $this->_example_output($output);
+        $this->load->view('v_foot');
     }
     function _example_output($output = null)
 
@@ -143,7 +146,7 @@ class article_c extends CI_Controller {
 
         public function validCommentaire($id) {
             $donnees['id_article'] = $id;
-            if ($this->session->userdata('login') != 0)
+            if ($this->session->userdata('login'))
                 $donnees['auteur'] = $this->session->userdata('login');
             else
                 $donnees['auteur'] = "Anonymous";

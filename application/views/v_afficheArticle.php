@@ -20,12 +20,13 @@
         <fieldset>
         <legend>Commentaires</legend>
 
-        <?php if(isset($commentaire)): ?>
+        <?php if($commentaire): ?>
+            <table style="width: 100%">
             <?php foreach ($commentaire as $value): ?>
-                <?= $value->auteur ?> : <?= $value->commentaire ?>
+                <tr><td><?= $value->auteur ?> : <?= $value->commentaire ?></td></tr>
             <?php endforeach; ?>
+            </table>
         <?php endif; ?>
-
         <form method="POST" action="<?= site_url('/article_c/validCommentaire/'.$article[0]->id); ?>">
             <textarea name="contenu"></textarea>
             <input type="submit">

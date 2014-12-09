@@ -25,7 +25,13 @@ h3.titre-article {
     margin-left : 60%;
     margin-top: 25px;
     font-size: 12px;
+
 }
+
+/*.option {
+    margin-left : 0%;
+    display: inline-block;
+}*/
 
 table {
     margin-left: auto;

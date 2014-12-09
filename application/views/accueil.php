@@ -8,7 +8,7 @@
                     <h3 class="titre-article"><?= $r->titre ?></h3>
                     <h6>Written by <?= $r->login; ?> on <?= $r->date_creation; ?></h6>
                     <div class="row">
-                        <?php echo character_limiter($r->contenu,1200); ?>
+                        <?php echo character_limiter($r->contenu,2000); ?>
 
                         <a href="<?= site_url('/article_c/afficherUnArticle/'.$r->id); ?>">Lire la suite</a>
                     </div>
