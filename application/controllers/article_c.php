@@ -24,6 +24,14 @@ class article_c extends CI_Controller {
 		$this->load->view('v_foot');
 	}
 
+    public function afficherUnArticle($id) {
+        $this->load->view('v_head');
+        $this->load->view('v_menu');
+        $donnees=$this->article_m->getUnArticle($id);
+        $this->load->view('v_afficheArticle',$donnees);
+        $this->load->view('v_foot');
+    }
+
 	public function formCreerArticle()
 	{
 		$this->load->view('v_head');
@@ -42,7 +50,7 @@ class article_c extends CI_Controller {
 		$this->form_validation->set_rules('article_contenu', 'contenu', 'required|min_length[5]');
         //$this->form_validation->set_rules('article_themes', 'id_theme', 'required|min_length[5]');
         $donnees['id_theme'] = $_POST['themes'];
-        $donnees['id_membre'] = 1;
+        $donnees['id_membre'] = $this->session->userdata("id");
         $donnees['titre']=$_POST['article_titre'];
 		$donnees['contenu']=$_POST['article_contenu'];
         $donnees['date_creation']=date(("Y-m-d H:i:s"));

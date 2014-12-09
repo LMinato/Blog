@@ -4,19 +4,19 @@ class Users_m extends CI_Model {
     public function add_user($donnees)
     {
         $sql = "INSERT membres VALUES (NULL,\"".$donnees['login']."\",\"".$donnees['email']."\",
-        \"".$donnees['pass']."\",1,0) ;";
+        \"".$donnees['pass']."\",2,0) ;";
         $this->db->query($sql);
     }
 
     public function verif_connexion($donnees)
     {
-        $sql = "SELECT droit,login,email,valide from membres WHERE login=\"".$donnees['login']."\"
+        $sql = "SELECT id,droit,login,email,valide from membres WHERE login=\"".$donnees['login']."\"
         and pass=\"".$donnees['pass']."\";";
         $query=$this->db->query($sql);
         if($query->num_rows()==1)
         {
             $row=$query->result_array();
-            $donnees_resultat=$row[0];
+            $donnees_resultat = $row[0];
             return $donnees_resultat;
         }
         else
@@ -25,7 +25,7 @@ class Users_m extends CI_Model {
 
     function EST_connecter()
     {
-         return $this->session->userdata('login') &&  $this->session->userdata('droit') ;
+         return $this->session->userdata('login') &&  $this->session->userdata('droit');
     }
 
     public function deconnexion()

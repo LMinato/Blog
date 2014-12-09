@@ -20,8 +20,7 @@ class article_m extends CI_Model {
                 ON T.id = A.id_theme
                 INNER JOIN membres M
                 ON M.id = A.id_membre
-                WHERE A.id=$id
-                ORDER BY A.id;";
+                WHERE A.id=$id;";
         $query = $this->db->query($sql);
         $data=$query->row_array();
         return $data;

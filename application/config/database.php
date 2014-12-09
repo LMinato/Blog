@@ -50,8 +50,8 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = 'bdd';
-$db['default']['database'] = 'Projet_WEB';
+$db['default']['password'] = 'Wisper70';
+$db['default']['database'] = 'CodeI';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

@@ -41,7 +41,7 @@ class users_c extends CI_Controller {
                 'login'=>$this->input->post('login'),
                 'email'=>$this->input->post('email'),
                 'pass'=>$this->input->post('pass'), //$this->encrypt->encode(  ; md5(
-                'droit'=>1,
+                'droit'=>2,
                 'valide'=>0
                 );
             $this->users_m->add_user($donnees);
@@ -84,7 +84,7 @@ class users_c extends CI_Controller {
 
     public function aff_deconnexion(){
         if( $this->session->userdata('droit')==2){
-            redirect('admin_c');
+            redirect('article_c');
         }
         if( $this->session->userdata('droit')==1){
             redirect('article_c');
