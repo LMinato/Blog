@@ -6,7 +6,7 @@ class article_m extends CI_Model {
         $sql = "SELECT ARTICLES.id, login, titre, libelle, contenu, date_creation, date_modification
                 FROM ARTICLES
                 INNER JOIN THEMES ON THEMES.id = ARTICLES.id_theme
-                INNER JOIN membres ON membres.id = ARTICLES.id_membre
+                INNER JOIN MEMBRES ON MEMBRES.id = ARTICLES.id_membre
                 ORDER BY ARTICLES.id;";
                 //"SELECT * FROM ARTICLES;";
         $query = $this->db->query($sql);
@@ -18,12 +18,13 @@ class article_m extends CI_Model {
                 FROM THEMES T
                 INNER JOIN ARTICLES A
                 ON T.id = A.id_theme
-                INNER JOIN membres M
+                INNER JOIN MEMBRES M
                 ON M.id = A.id_membre
                 WHERE A.id=$id;";
         $query = $this->db->query($sql);
-        $data=$query->row_array();
-        return $data;
+        return $query->result();
+        /*$data=$query->row_array();
+        return $data;*/
     }
 
     function getUneQuote($id) {
@@ -64,4 +65,19 @@ class article_m extends CI_Model {
         return $retour;
     }
 
+    /*
+     *          Model sur les commentaires
+     */
+
+    function addCommentaire($donnees) {
+        $this->db->insert("COMMENTAIRES",$donnees);
+    }
+
+    function getCommentaires($id) {
+        $sql = "SELECT auteur, commentaire
+                FROM COMMENTAIRES
+                WHERE id_article = $id";
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
 }

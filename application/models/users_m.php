@@ -3,14 +3,14 @@
 class Users_m extends CI_Model {
     public function add_user($donnees)
     {
-        $sql = "INSERT membres VALUES (NULL,\"".$donnees['login']."\",\"".$donnees['email']."\",
+        $sql = "INSERT MEMBRES VALUES (NULL,\"".$donnees['login']."\",\"".$donnees['email']."\",
         \"".$donnees['pass']."\",2,0) ;";
         $this->db->query($sql);
     }
 
     public function verif_connexion($donnees)
     {
-        $sql = "SELECT id,droit,login,email,valide from membres WHERE login=\"".$donnees['login']."\"
+        $sql = "SELECT id,droit,login,email,valide from MEMBRES WHERE login=\"".$donnees['login']."\"
         and pass=\"".$donnees['pass']."\";";
         $query=$this->db->query($sql);
         if($query->num_rows()==1)
@@ -35,7 +35,7 @@ class Users_m extends CI_Model {
     }
     public function test_email($email)
     {
-        $sql = "SELECT email  from membres WHERE email=\"".$email."\";";
+        $sql = "SELECT email  from MEMBRES WHERE email=\"".$email."\";";
         $query=$this->db->query($sql);
         if($query->num_rows()>=1)
             return true;
@@ -44,7 +44,7 @@ class Users_m extends CI_Model {
     }
     public function test_login($login)
     {
-        $sql = "SELECT login  from membres WHERE login=\"".$login."\";";
+        $sql = "SELECT login  from MEMBRES WHERE login=\"".$login."\";";
         $query=$this->db->query($sql);
         if($query->num_rows()>=1)
             return true;

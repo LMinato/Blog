@@ -31,8 +31,8 @@ class users_c extends CI_Controller {
     {
         $this->load->view('v_head');
         $this->load->view('v_menu');
-        $this->form_validation->set_rules('login','login','trim|required|is_unique[membres.login]');
-        $this->form_validation->set_rules('email','Email','trim|required|valid_email|is_unique[membres.email]');
+        $this->form_validation->set_rules('login','login','trim|required|is_unique[MEMBRES.login]');
+        $this->form_validation->set_rules('email','Email','trim|required|valid_email|is_unique[MEMBRES.email]');
         $this->form_validation->set_rules('pass','Mot de passe','trim|required|matches[pass2]');
         $this->form_validation->set_rules('pass2','Mot de passe','trim|required');
                 /* rappeler la vue à la fin de la méthode */

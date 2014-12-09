@@ -1,6 +1,18 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class article_c extends CI_Controller {
+    function __construct()
+    {
+        parent::__construct();
+
+        /* Standard Libraries of codeigniter are required */
+        $this->load->database();
+        $this->load->helper('url');
+        /* ------------------ */
+
+        $this->load->library('grocery_CRUD');
+
+    }
 
 	public function index()
 	{
@@ -14,6 +26,18 @@ class article_c extends CI_Controller {
 		$this->load->view('v_foot');
 	}
 
+    public function membres()
+    {
+        $this->grocery_crud->set_table('MEMBRES');
+        $output = $this->grocery_crud->render();
+
+        $this->_example_output($output);
+    }
+    function _example_output($output = null)
+
+    {
+        $this->load->view('our_template.php',$output);
+    }
 
 	public function afficherArticle()
 	{
@@ -27,7 +51,8 @@ class article_c extends CI_Controller {
     public function afficherUnArticle($id) {
         $this->load->view('v_head');
         $this->load->view('v_menu');
-        $donnees=$this->article_m->getUnArticle($id);
+        $donnees['article']=$this->article_m->getUnArticle($id);
+        $donnees['commentaire'] = $this->article_m->getCommentaires($id);
         $this->load->view('v_afficheArticle',$donnees);
         $this->load->view('v_foot');
     }
@@ -110,6 +135,22 @@ class article_c extends CI_Controller {
 			$this->article_m->modifierArticle($donnees['id'],$donnees);
 			redirect('article_c/afficherArticle');
 		}
+    }
 
-	}
+        /*
+         *      Contrôles sur les commentaires
+         */
+
+        public function validCommentaire($id) {
+            $donnees['id_article'] = $id;
+            if ($this->session->userdata('login') == 0)
+                $donnees['auteur'] = $this->session->userdata('login');
+            else
+                redirect('article_c/afficherUnArticle/'.$id);
+            $donnees['commentaire'] = $_POST['contenu'];
+            $donnees['date_commentaire'] = date(("Y-m-d H:i:s"));
+            $this->article_m->addCommentaire($donnees);
+            redirect('article_c/afficherUnArticle/'.$id);
+        }
+
 }
