@@ -80,7 +80,7 @@ class article_c extends CI_Controller {
 		$donnees['contenu']=$_POST['article_contenu'];
         $donnees['date_creation']=date(("Y-m-d H:i:s"));
         $donnees['date_modification'] = date(("Y-m-d H:i:s"));
-		if ($this->form_validation->run() == FALSE)
+		if ($this->form_validation->run() == FALSE || $this->session->userdata('valide') == 0)
 		{
 			$this->load->view('v_head');
 			$this->load->view('v_menu');
@@ -143,10 +143,10 @@ class article_c extends CI_Controller {
 
         public function validCommentaire($id) {
             $donnees['id_article'] = $id;
-            if ($this->session->userdata('login') == 0)
+            if ($this->session->userdata('login') != 0)
                 $donnees['auteur'] = $this->session->userdata('login');
             else
-                redirect('article_c/afficherUnArticle/'.$id);
+                $donnees['auteur'] = "Anonymous";
             $donnees['commentaire'] = $_POST['contenu'];
             $donnees['date_commentaire'] = date(("Y-m-d H:i:s"));
             $this->article_m->addCommentaire($donnees);
