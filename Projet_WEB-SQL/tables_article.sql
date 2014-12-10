@@ -35,10 +35,9 @@ CREATE TABLE IF NOT EXISTS MEMBRES (
 );
 
 INSERT INTO MEMBRES (`id`, `login`, `email`, `pass`, `droit`, `valide`) VALUES
-(1, 'Auteur inconnu', '', '', 3, 1),
-(2, 'toto', 'toto@gmail.com', 'toto', 2, 1),
-(3, 'toto2', 'toto2@gmail.com', 'toto', 2, 0),
-(4, 'admin', 'admin@site.fr', 'admin', 1, 1);
+('', 'Auteur inconnu', '', '', 3, 1),
+('', 'admin', 'admin@site.fr', '21232f297a57a5a743894a0e4a801fc3', 1, 1),
+('', 'Minato', 'lcorailler@gmail.com','c6530dd8a8ef012661ae736045ace973', 1, 1);
 
 
 CREATE TABLE ARTICLES (
