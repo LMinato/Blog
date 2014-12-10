@@ -1,0 +1,12 @@
+{
+    "name": "s3b/essaicomposer",
+    "require": {
+        "gregwar/captcha": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "amillet",
+            "email": "amillet.iut90@gmail.com"
+        }
+    ]
+}

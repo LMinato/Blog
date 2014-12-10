@@ -35,6 +35,9 @@ class users_c extends CI_Controller {
         $this->form_validation->set_rules('email','Email','trim|required|valid_email|is_unique[MEMBRES.email]');
         $this->form_validation->set_rules('pass','Mot de passe','trim|required|matches[pass2]');
         $this->form_validation->set_rules('pass2','Mot de passe','trim|required');
+        $this->form_validation->set_rules('entree_captcha','Entrée captcha','trim|required|matches[captcha]');
+        $this->form_validation->set_rules('captcha','Captcha','trim|required');
+
                 /* rappeler la vue à la fin de la méthode */
         if($this->form_validation->run()){
             $donnees= array(
