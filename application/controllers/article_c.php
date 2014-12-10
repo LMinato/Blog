@@ -26,6 +26,14 @@ class article_c extends CI_Controller {
 		$this->load->view('v_foot');
 	}
 
+
+    /*
+     *
+     *                  GROCERY CRUD
+     *
+     */
+
+
     public function membres()
     {
         $this->load->view('v_head');
@@ -33,14 +41,36 @@ class article_c extends CI_Controller {
         $this->grocery_crud->set_table('MEMBRES');
         $output = $this->grocery_crud->render();
 
-        $this->_example_output($output);
+        $this->membres_output($output);
         $this->load->view('v_foot');
     }
-    function _example_output($output = null)
+    function membres_output($output = null)
 
     {
-        $this->load->view('our_template.php',$output);
+        $this->load->view('grocery_membres.php',$output);
     }
+
+    public function commentaires()
+    {
+        $this->load->view('v_head');
+        $this->load->view('v_menu');
+        $this->grocery_crud->set_table('COMMENTAIRES');
+        $output = $this->grocery_crud->render();
+
+        $this->commentaires_output($output);
+        $this->load->view('v_foot');
+    }
+    function commentaires_output($output = null)
+
+    {
+        $this->load->view('grocery_commentaires.php',$output);
+    }
+
+    /*
+     *
+     *                  ARTICLES
+     *
+     */
 
 	public function afficherArticle()
 	{
@@ -54,7 +84,7 @@ class article_c extends CI_Controller {
     public function afficherUnArticle($id) {
         $this->load->view('v_head');
         $this->load->view('v_menu');
-        $donnees['article']=$this->article_m->getUnArticle($id);
+        $donnees=$this->article_m->getUnArticle($id);
         $donnees['commentaire'] = $this->article_m->getCommentaires($id);
         $this->load->view('v_afficheArticle',$donnees);
         $this->load->view('v_foot');
@@ -94,14 +124,14 @@ class article_c extends CI_Controller {
 		else
 		{
 			$this->article_m->insertArticle($donnees);
-			redirect('article_c/afficherArticle');
+			redirect('article_c/');
 		}
 		
 	}
 	public function supprimerArticle($idArticle)
 	{
 		$this->article_m->supprimerArticle($idArticle);
-		redirect('article_c/afficherArticle');
+		redirect('article_c/');
 	}
 
 	public function formModifierArticle($id)
@@ -136,12 +166,14 @@ class article_c extends CI_Controller {
 		else
 		{		
 			$this->article_m->modifierArticle($donnees['id'],$donnees);
-			redirect('article_c/afficherArticle');
+			redirect('article_c/');
 		}
     }
 
         /*
-         *      Contrôles sur les commentaires
+         *
+         *
+         *             Contrôles sur les commentaires
          */
 
         public function validCommentaire($id) {

@@ -9,16 +9,16 @@
 <body>
 
 <div id="container">
-    <div>
+    <div class="login">
         <?php if($titre=="connexion"):?>
         <h1>Page de connexion</h1>
 
         <?php echo form_open('users_c/aff_connexion'); ?>
-            <label for="login">login:</label>
+            <label for="login">Login :</label>
             <input type="text" name="login" value="<?php echo set_value('login');?>" />
             <?php echo form_error('login','<span class="error">',"</span>");?>
             <br>
-            <label for="pass">Mot de passe:</label>
+            <label for="pass">Mot de passe :</label>
             <input type="password" name="pass" value="<?= set_value('pass');?>" />
             <?php echo form_error('pass','<span class="error">',"</span>");?>
             <?php if(isset($erreur))echo '<span class="error">'.$erreur."</span>";?>
@@ -36,8 +36,6 @@
         <?php endif?>
 
 	</div>
-
-	<p class="footer">DUT info Belfort <strong>{elapsed_time}</strong> seconds</p>
 </div>
 
 </body>

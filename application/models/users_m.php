@@ -4,14 +4,14 @@ class Users_m extends CI_Model {
     public function add_user($donnees)
     {
         $sql = "INSERT MEMBRES VALUES (NULL,\"".$donnees['login']."\",\"".$donnees['email']."\",
-        \"".$donnees['pass']."\",2,0) ;";
+        \"".md5($donnees['pass'])."\",2,0) ;";
         $this->db->query($sql);
     }
 
     public function verif_connexion($donnees)
     {
         $sql = "SELECT id,droit,login,email,valide from MEMBRES WHERE login=\"".$donnees['login']."\"
-        and pass=\"".$donnees['pass']."\";";
+        and pass=\"".md5($donnees['pass'])."\";";
         $query=$this->db->query($sql);
         if($query->num_rows()==1)
         {

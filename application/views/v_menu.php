@@ -16,7 +16,7 @@
                 <?php } ?>
             </ul>
         </div>
-        <h1><a href="<?= site_url();?>">Blog </a><small>This is my blog. It's awesome.</small></h1>
+        <h1><a href="<?= site_url();?>"><i class="fi-home"></i> Home </a><small>This is my blog. It's awesome.</small></h1>
         <hr />
     </div>
 </div>

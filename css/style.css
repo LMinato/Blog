@@ -2,6 +2,13 @@ article {
     padding-left: 25px;
     padding-right: 25px;
 }
+h3 {
+    margin-bottom: 15px;
+}
+h6 {
+    margin-bottom: 30px;
+}
+
 .row {
     padding-left : 0px;
     max-width: 70.5rem;
@@ -17,15 +24,28 @@ fieldset.article {
 
 }
 h3.titre-article {
-    margin-left: -50px;
+    margin-left: -40px;
     left:0px;
+    text-align: center;
 }
 
 .ModifOnLeft {
     margin-left : 60%;
     margin-top: 25px;
     font-size: 12px;
+}
 
+.left {
+    margin-left : 80%;
+    font-size: 14px;
+}
+.lienOption {
+    font-size: 14px;
+}
+.modif {
+    margin-left: -20px;
+    font-size: 12px;
+    text-align: right;
 }
 
 /*.option {
@@ -34,6 +54,28 @@ h3.titre-article {
 }*/
 
 table {
+    margin-left: auto;
+    margin-right: auto;
+}
+td.center {
+    text-align: center;
+}
+
+input[type=text], input[type=password] {
+    margin-bottom: 0px;
+}
+label {
+    margin-top: 20px;
+}
+i {
+    font-size:20px;
+}
+.fi-home {
+    font-size:46px;
+}
+
+.login {
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
 }

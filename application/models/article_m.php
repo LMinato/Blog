@@ -22,9 +22,9 @@ class article_m extends CI_Model {
                 ON M.id = A.id_membre
                 WHERE A.id=$id;";
         $query = $this->db->query($sql);
-        return $query->result();
-        /*$data=$query->row_array();
-        return $data;*/
+        //return $query->result();*/
+        $data=$query->row_array();
+        return $data;
     }
 
     function getUneQuote($id) {

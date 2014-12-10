@@ -21,11 +21,11 @@
                 <td><?= $r->libelle;?></td>
                 <td><?= $r->date_creation; ?></td>
                 <td><?= $r->date_modification; ?></td>
-                <td>
-                    <a href="<?= site_url('/article_c/formModifierArticle/'.$r->id); ?>"><img src="<?= base_url(); ?>edit.png" /></a>
+                <td class="center">
+                    <a href="<?= site_url('/article_c/formModifierArticle/'.$r->id); ?>"><i class="fi-page-edit"></i></a>
                 </td>
-                <td>
-                    <a href="<?= site_url('/article_c/supprimerArticle/'.$r->id);?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer cet article ?'));"><img src="<?= base_url(); ?>delete.png"/></a>
+                <td class="center">
+                    <a href="<?= site_url('/article_c/supprimerArticle/'.$r->id);?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer cet article ?'));"><i class="fi-page-delete"></i></a>
                 </td>
             </tr>
         <?php endforeach; ?>

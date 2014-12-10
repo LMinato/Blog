@@ -16,6 +16,8 @@
 </head>
 <body>
 
+<a href="<?= site_url('/article_c/commentaires/');?>">VOIR TABLE COMMENTAIRES</a><br />
+
 <!-- End of header-->
 <div style='height:20px;'></div>
 <div>
