@@ -4,6 +4,7 @@
         <h3 class="titre-article"><?= $titre ?></h3>
         <h6>Written by <?= $login ?> on <?= $date_creation ?></h6>
         <div class="row">
+            <hr />
             <?php echo $contenu ?>
         </div>
         <?php if ($this->session->userdata('droit') ==1 || $this->session->userdata('login') == $login) { ?>

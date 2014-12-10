@@ -61,7 +61,7 @@ td.center {
     text-align: center;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], select {
     margin-bottom: 0px;
 }
 label {

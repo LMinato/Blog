@@ -6,7 +6,8 @@
                 <?php foreach ($articles as $r): ?>
                 <fieldset class="article">
                     <h3 class="titre-article"><?= $r->titre ?></h3>
-                    <h6>Written by <?= $r->login; ?> on <?= $r->date_creation; ?></h6>
+                    <h6>Written by <kbd><?= $r->login; ?></kbd> on <kbd><?= $r->date_creation; ?></kbd></h6>
+                    <hr />
                     <div class="row">
                         <?php echo ellipsize($r->contenu, 500, .30); ?>
 
