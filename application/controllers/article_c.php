@@ -106,7 +106,7 @@ class article_c extends CI_Controller {
 	{
 		$this->form_validation->set_rules('article_titre', 'titre', 'required|min_length[5]');
 		$this->form_validation->set_rules('article_contenu', 'contenu', 'required|min_length[5]');
-        $this->form_validation->set_rules('article_theme', 'id_theme', 'required');
+        //$this->form_validation->set_rules('article_theme', 'id_theme', 'required');
         $donnees['id_theme'] = $_POST['themes'];
         $donnees['id_membre'] = $this->session->userdata("id");
         $donnees['titre']=$_POST['article_titre'];

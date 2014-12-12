@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Projet Blu | CodeIgniter</title>
+  <title>Bienvenue sur notre blog</title>
   <link rel="stylesheet" href="<?= base_url();?>css/foundation.css">
   <link rel="stylesheet" href="<?= base_url();?>css/foundation-icons.css" />
   <link rel="stylesheet" href="<?= base_url();?>css/style.css">

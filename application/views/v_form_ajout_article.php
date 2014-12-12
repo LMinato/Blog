@@ -6,7 +6,7 @@
                 <label for="article_titre">Titre (*) : </label>
                 <input type="text" name="article_titre" value="" />
                 <?php echo form_error('article_titre','<span class="error">',"</span>");?>
-                <label for="article_themes">Theme (*):</label>
+                <label for="article_themes">Thème (*) : </label>
                 <select name="themes" required="true" class="form-control">
                     <option selected value="NULL"></option>
                     <?php if(isset($themes)): ?>
@@ -15,8 +15,8 @@
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </select>
-                <?= form_error('article_theme','<span class="error">',"</span>"); ?>
-                <label for="article_contenu">Contenu (*):</label>
+                <?= form_error('article_themes','<span class="error">',"</span>"); ?>
+                <label for="article_contenu">Contenu (*) : </label>
                 <textarea name="article_contenu" style="width:100%; height:200px"></textarea>
                 <?= form_error('article_contenu','<span class="error">',"</span>"); ?>
                 <p id="article_information"> * : champs obligatoires </p>

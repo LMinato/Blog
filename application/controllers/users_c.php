@@ -61,7 +61,7 @@ class users_c extends CI_Controller {
         if ($this->users_m->EST_connecter()){
             redirect('users_c/aff_deconnexion');
         }
-        $this->form_validation->set_rules('login','login','trim|required');
+        $this->form_validation->set_rules('login','Login','trim|required');
         $this->form_validation->set_rules('pass','Mot de passe','trim|required');
         /* rappeler la vue à la fin de la méthode */
         if($this->form_validation->run()){
@@ -76,7 +76,7 @@ class users_c extends CI_Controller {
                 redirect('users_c/aff_connexion');
             }
             else{
-                $donnees['erreur']="mot de passe ou login incorrect";
+                $donnees['erreur']="Mot de passe ou login incorrect";
                 $donnees['titre']="connexion";
             }
         }
@@ -99,7 +99,8 @@ class users_c extends CI_Controller {
     public function deconnexion()
     {
         $this->session->sess_destroy();
-        redirect('article_c');exit;
+        redirect('article_c');
+        exit;
     }
     public function mdp_oublie()
     {
@@ -113,8 +114,8 @@ class users_c extends CI_Controller {
                     );
                     $this->email->from('noreply@monsite.com','Mon site');
                     $this->email->to($this->input->post('email'),'mot de passe oublié');
-                    $this->email->subject('votre mot de passe');
-                    $this->email->message('<p>voici un nouveau de passe </p>....');
+                    $this->email->subject('Votre mot de passe');
+                    $this->email->message('<p>Voici un nouveau de passe </p>....');
                     $this->email->send();
                    // $this->users_m->envoie_email($donnees);
                     // fin d'ajout et redirection
@@ -122,11 +123,11 @@ class users_c extends CI_Controller {
                 }
             }
             else{
-                $donnees['erreur']="cet email n existe ps";
+                $donnees['erreur']="Cet e-mail n'existe pas";
             }
 
         }
-        $donnees['titre']="mot de passe oublié";
+        $donnees['titre']="Mot de passe oublié";
         $this->load->view('users_mdp_oublie',$donnees);
     }
 }

@@ -3,8 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<title><?= $titre?></title>
-
-	<link rel="stylesheet" href="<?= base_url(); ?>monCSS/mesStyles1.css" >
 </head>
 <body>
 
@@ -14,18 +12,20 @@
         <h1>Page de connexion</h1>
 
         <?php echo form_open('users_c/aff_connexion'); ?>
-            <label for="login">Login :</label>
+            <label for="login">Login : </label>
             <input type="text" name="login" value="<?php echo set_value('login');?>" />
             <?php echo form_error('login','<span class="error">',"</span>");?>
             <br>
-            <label for="pass">Mot de passe :</label>
+            <label for="pass">Mot de passe : </label>
             <input type="password" name="pass" value="<?= set_value('pass');?>" />
             <?php echo form_error('pass','<span class="error">',"</span>");?>
             <?php if(isset($erreur))echo '<span class="error">'.$erreur."</span>";?>
-            <br>
-            <input type="submit" value="Connexion" />
+            <br />
 
+            <input type="submit" value="Connexion" />
+            <br />
             <?php echo form_close(); ?>
+            <br />
             <p><?= anchor('users_c/inscription','Inscrivez vous!')?></p>
             <p><?= anchor('users_c/mdp_oublie','Mot de passe oublié ?')?></p>
         <?php endif?>

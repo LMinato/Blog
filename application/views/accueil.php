@@ -33,7 +33,7 @@
 
 
     <aside class="large-3 columns">
-        <h5>Categories</h5>
+        <h5>Catégories</h5>
         <ul class="side-nav">
         <?php if(isset($themes)): ?>
             <?php foreach ($themes as $value): ?>
